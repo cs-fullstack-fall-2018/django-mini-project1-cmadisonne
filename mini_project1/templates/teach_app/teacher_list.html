@@ -1,0 +1,22 @@
+{% extends 'teach_app/base.html' %}
+{% block content %}
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+            <div class="post">
+                <div class="date">
+                    <p>Entry Date: {{ post.entry_date }}</p>
+                </div>
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.name }}</a></h1>
+                <p>Worked On: {{ post.work_date|linebreaksbr }}</p>
+                <p>Worked At: {{ post.school|linebreaksbr }}</p>
+                <p>Taught: {{ post.subject|linebreaksbr }}</p>
+                <p>Hours: {{ post.hours|linebreaksbr }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

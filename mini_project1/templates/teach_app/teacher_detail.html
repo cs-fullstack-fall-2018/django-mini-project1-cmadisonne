@@ -1,0 +1,16 @@
+{% extends 'teach_app/base.html' %}
+{% block content %}
+<div class="post">
+    {% if post.entry_date %}
+    <div class="date">
+        {{ post.entry_date }}
+    </div>
+    {% endif %}
+    {#<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>#}
+    <h1>{{ post.name }}</h1>
+    <p>{{ post.work_date|linebreaksbr }}</p>
+    <p>{{ post.school|linebreaksbr }}</p>
+    <p>{{ post.subject|linebreaksbr }}</p>
+    <p>{{ post.hours|linebreaksbr }}</p>
+</div>
+{% endblock %}
